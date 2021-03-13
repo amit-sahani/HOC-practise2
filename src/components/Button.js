@@ -1,25 +1,17 @@
 import React, { Component } from 'react'
-
-styles = {
-    default:{
-        backgroundColor: "white",
-        padding: "10px",
-        color: "black"
-    },
-    disable:{
-        backgroundColor: "gray",
-        color: "white"
-    }
-}
+import Wrapper from '../HOC/Wrapper'
 
 class Button extends Component {
+
     render() {
+
+        console.log(this.props.styles)
         return (
             <div>
-                <button style={styles.default}>I am a Button</button>
+                <button style={this.props.styles}>I am a Button</button>
             </div>
         )
     }
 }
 
-export default Button
+export default Wrapper(Button)
